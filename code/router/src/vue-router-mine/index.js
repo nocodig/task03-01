@@ -25,7 +25,7 @@ export default class VueRouter {
   constructor(optiosn) {
     this.optiosn = optiosn;
     this.routeMap = new Map();
-    this.data = _Vue.observable({ current: '/'});
+    this.data = _Vue.observable({ current: this.isHistory() ? window.location.pathname : window.location.hash.replace('#', '')});
   }
 
   isHistory() {
